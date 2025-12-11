@@ -33,7 +33,7 @@ defaults write com.apple.dock "autohide-time-modifier" -float "0.25" || true;
 defaults write com.apple.dock "autohide-delay" -float "0" || true;
 
 # Disable rich text by default for TextEdit
-defaults write com.apple.TextEdit "RichText" -bool "false";
+defaults write com.apple.TextEdit "RichText" -bool "false" || true;
 
 # Restart all necessary apps
 killall -q TextEdit || true;
