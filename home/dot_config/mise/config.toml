@@ -1,6 +1,7 @@
 [tools]
 "java" = "zulu-21"
 "node" = "22"
+"poetry" = "latest"
 "python" = "3.13"
 "sqlite" = "3"
 "usage" = "latest"
