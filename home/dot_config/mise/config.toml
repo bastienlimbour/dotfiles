@@ -4,11 +4,11 @@
 "poetry" = "latest"
 "python" = "3.13"
 "sqlite" = "3"
-"usage" = "latest"
 "npm:vercel" = "latest"
 
 [hooks]
 postinstall = "corepack enable"
 
 [settings]
+experimental = true
 idiomatic_version_file_enable_tools = ["node"]
