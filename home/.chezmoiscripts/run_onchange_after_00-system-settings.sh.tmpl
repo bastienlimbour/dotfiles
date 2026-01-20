@@ -26,6 +26,9 @@ defaults write com.apple.finder ShowStatusBar -bool true || true;
 # Disable mouse acceleration
 # defaults write NSGlobalDomain com.apple.mouse.linear -bool true || true;
 
+# Disable window opening animations (like Google Chrome)
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+
 # Shorter Dock autohide animation duration
 defaults write com.apple.dock "autohide-time-modifier" -float "0.25" || true;
 
