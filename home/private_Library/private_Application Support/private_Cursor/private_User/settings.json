@@ -133,6 +133,9 @@
     "commits": false,
     "stashes": false
   },
+  "gitlens.graph.layout": "editor",
+  "gitlens.rebaseEditor.ordering": "asc",
+  "git.ignoreRebaseWarning": true,
 
   // Performances
   "redhat.telemetry.enabled": false,
@@ -174,7 +177,8 @@
     // "*.scss": "postcss",
   },
   "workbench.editorAssociations": {
-    "*.svg": "default"
+    "*.svg": "default",
+    "git-rebase-todo": "default"
   },
 
   // ----- Extensions -----
@@ -242,9 +246,7 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
+  }
 
   // --- Unsorted ---
-
-  "gitlens.graph.layout": "editor"
 }
