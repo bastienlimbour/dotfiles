@@ -1,12 +1,18 @@
 # Fix zsh issue in Cursor IDE
 # [[ "$COMPOSER_NO_INTERACTION" == "1" ]] && return
 
+# ---- Optional zsh startup profiling ----
+
+if [[ -n "${ZSH_PROFILE:-}" ]]; then
+  zmodload zsh/zprof
+fi
+
 # -------- Pre-Initialization --------
 
 # Powerlevel10k instant prompt (must be at the top) (only if not running in Cursor Agent)
-if [[ -z "$CURSOR_AGENT" ]]; then
+# if [[ -z "$CURSOR_AGENT" ]]; then
   [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]] && source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# fi
 
 # -------- XDG variables --------
 
@@ -16,7 +22,7 @@ fi
 
 {{ template "zsh_env_custom.tmpl" . }}
 
-export BREW_PREFIX="${BREW_PREFIX:-$(brew --prefix 2>/dev/null)}"
+export HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-$(brew --prefix 2>/dev/null)}"
 export DOTFILES="$(chezmoi source-path 2>/dev/null || echo "$HOME/.local/share/chezmoi")"
 
 # -------- Tools configurations & Paths --------
@@ -59,15 +65,16 @@ fi
 mkdir -p "$XDG_STATE_HOME/zsh" "$XDG_CACHE_HOME/zsh" "$XDG_DATA_HOME/zsh/completions"
 
 # Powerlevel10k theme (only if not running in Cursor Agent)
-if [[ -z "$CURSOR_AGENT" ]]; then
-  [[ -f "$BREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme" ]] && source "$BREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
+# if [[ -z "$CURSOR_AGENT" ]]; then
+  [[ -f "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme" ]] && source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
   [[ -f "$XDG_CONFIG_HOME/powerlevel10k/p10k.zsh" ]] && source "$XDG_CONFIG_HOME/powerlevel10k/p10k.zsh"
-fi
+# fi
 
 # Completion
-fpath=("$XDG_DATA_HOME/zsh/completions" "$BREW_PREFIX/share/zsh-completions" $fpath)
+fpath=("$XDG_DATA_HOME/zsh/completions" "$HOMEBREW_PREFIX/share/zsh-completions" $fpath)
 autoload -Uz compinit
-compinit -u -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+zstyle ":completion:*" use-cache on
 zstyle ":completion:*" cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 zstyle ":completion:*" menu select=2
 zstyle ":completion:*" list-rows-first false
@@ -87,8 +94,13 @@ HISTSIZE=50000
 SAVEHIST=50000
 HISTDUP=erase
 setopt appendhistory
-unsetopt incappendhistory
-unsetopt share_history
+setopt incappendhistory
+setopt share_history
+setopt hist_fcntl_lock
+
+setopt extended_history
+setopt hist_find_no_dups
+setopt hist_reduce_blanks
 setopt hist_expire_dups_first
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -97,21 +109,22 @@ setopt hist_verify
 
 # Fuzzy Finder (fzf)
 if command -v fzf >/dev/null; then
-  source "$BREW_PREFIX/opt/fzf/shell/completion.zsh"
-  source "$BREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+  if [[ -r "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh" && -r "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh" ]]; then
+    source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh"
+    source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+  else
+    fzf_zsh_init="$(fzf --zsh 2>/dev/null)" && eval "$fzf_zsh_init"
+    unset fzf_zsh_init
+  fi
 fi
 
 # Zsh History Substring Search
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=false
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=false
-ZSH_HISTORY_SUBSTRING_SEARCH_FILE="$BREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+# HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=true
+# HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=false
+ZSH_HISTORY_SUBSTRING_SEARCH_FILE="$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 [[ -f "$ZSH_HISTORY_SUBSTRING_SEARCH_FILE" ]] && source "$ZSH_HISTORY_SUBSTRING_SEARCH_FILE"
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
-
-# Zsh Syntax Highlighting
-ZSH_SYNTAX_HIGHLIGHTING_FILE="$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-[[ -f "$ZSH_SYNTAX_HIGHLIGHTING_FILE" ]] && source "$ZSH_SYNTAX_HIGHLIGHTING_FILE"
 
 # -------- Aliases --------
 
@@ -139,10 +152,10 @@ alias zshsource="source ~/.zshrc"
 alias sshconfig="$EDITOR ~/.ssh/config"
 alias hostsconfig="$EDITOR /etc/hosts"
 alias hostconfig="hostsconfig"
-alias vhostsconfig="$EDITOR $BREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf"
+alias vhostsconfig="$EDITOR $HOMEBREW_PREFIX/etc/httpd/extra/httpd-vhosts.conf"
 alias vhostconfig="vhostsconfig"
-alias httpdconfig="$EDITOR $BREW_PREFIX/etc/httpd/httpd.conf"
-alias dnsmasqconfig="$EDITOR $BREW_PREFIX/etc/dnsmasq.conf"
+alias httpdconfig="$EDITOR $HOMEBREW_PREFIX/etc/httpd/httpd.conf"
+alias dnsmasqconfig="$EDITOR $HOMEBREW_PREFIX/etc/dnsmasq.conf"
 
 # Sublime Text alias
 alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@"
@@ -156,3 +169,13 @@ fi
 
 # Mise - Tools version manager (must be at the bottom)
 eval "$(mise activate zsh)"
+
+# Zsh Syntax Highlighting (load late so it wraps final widgets)
+ZSH_SYNTAX_HIGHLIGHTING_FILE="$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[[ -f "$ZSH_SYNTAX_HIGHLIGHTING_FILE" ]] && source "$ZSH_SYNTAX_HIGHLIGHTING_FILE"
+
+# ---- Optional zsh startup profiling ----
+
+if [[ -n "${ZSH_PROFILE:-}" ]]; then
+  zprof
+fi
