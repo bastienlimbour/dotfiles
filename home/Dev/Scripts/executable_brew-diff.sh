@@ -1,7 +1,13 @@
 #!/bin/bash
 
 # This script compares the installed taps, brews, and casks with
-# the ones in the Brewfile of chezmoi and prints the differences.
+# the ones in the Brewfile and prints the differences.
+#
+# Usage:
+#   brew-diff.sh
+#
+# Example:
+#   brew-diff.sh
 
 set -eufo pipefail
 

@@ -1,8 +1,15 @@
 #!/bin/bash
 
-# This script retroactively syncs commits from a source repository
-# to a target repository by replaying commits with the correct author
-# information and commit date.
+# This script retroactively syncs commits from source repositories to a target repository
+# by creating empty commits with matching dates and author information.
+#
+# Usage:
+#   git-sync-empty-commits.sh
+#
+# Example:
+#   git-sync-empty-commits.sh
+
+set -euo pipefail
 
 # Specify the start date for syncing commits (format: YYYY-MM-DD)
 START_DATE="2025-02-20"

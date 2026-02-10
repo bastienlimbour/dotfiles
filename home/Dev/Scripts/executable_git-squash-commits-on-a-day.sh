@@ -2,8 +2,14 @@
 
 # This script squashes commits on a specific date down to a minimum number,
 # preserving all code changes while reducing commit count.
+#
+# Usage:
+#   git-squash-commits-on-a-day.sh [date] [min_commits] [repo_url] [branch]
+#
+# Example:
+#   git-squash-commits-on-a-day.sh 2024-06-05 5 git@github.com:user/repo.git main
 
-set -e
+set -eufo pipefail
 
 # Configuration
 DELETE_DATE="${1:-2024-06-05}"  # Pass date as first argument or use default

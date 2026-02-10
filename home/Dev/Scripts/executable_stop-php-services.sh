@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# This script stops all PHP environment services,
-# Apache, MariaDB, and DNSMasq.
+# This script stops all PHP environment services: Apache, MariaDB, and DNSMasq.
+#
+# Usage:
+#   stop-php-services.sh
+#
+# Example:
+#   stop-php-services.sh
+
+set -eufo pipefail
 
 echo "Stopping DNSMasq (need sudo)"
 sudo brew services stop dnsmasq

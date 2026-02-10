@@ -1,7 +1,15 @@
 #!/bin/bash
 
-# This script starts all PHP environment services,
-# Apache, MariaDB, and DNSMasq.
+# This script starts all PHP environment services: Apache, MariaDB, and DNSMasq.
+# It also switches the PHP version to 8.2 using sphp.
+#
+# Usage:
+#   start-php-services.sh
+#
+# Example:
+#   start-php-services.sh
+
+set -eufo pipefail
 
 echo "Starting DNSMasq (need sudo)"
 sudo brew services start dnsmasq

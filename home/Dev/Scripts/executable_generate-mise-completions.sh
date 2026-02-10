@@ -1,7 +1,13 @@
 #!/bin/bash
 
 # This script generates zsh completion files for all tools installed by mise.
-# Completions go to: $XDG_DATA_HOME/zsh/completions (default: ~/.local/share/zsh/completions)
+# Completions are saved to $XDG_DATA_HOME/zsh/completions (default: ~/.local/share/zsh/completions).
+#
+# Usage:
+#   generate-mise-completions.sh
+#
+# Example:
+#   generate-mise-completions.sh
 
 set -euo pipefail
 

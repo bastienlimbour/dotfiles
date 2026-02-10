@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# This script deletes local-only git branches that are not
-# present on the remote repository.
+# This script deletes local-only git branches that are not present on the remote repository.
+#
+# Usage:
+#   git-delete-local-only-branches.sh
+#
+# Example:
+#   git-delete-local-only-branches.sh
+
+set -eufo pipefail
 
 git fetch --prune
 
