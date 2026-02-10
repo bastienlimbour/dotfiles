@@ -231,6 +231,7 @@ ctrl-alt-shift-dollar = 'move-node-to-monitor right --focus-follows-window'
 # alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+ctrl-alt-0 = 'workspace 0'
 ctrl-alt-1 = 'workspace 1'
 ctrl-alt-2 = 'workspace 2'
 ctrl-alt-3 = 'workspace 3'
@@ -246,6 +247,7 @@ ctrl-alt-p = 'workspace P'
 ctrl-alt-a = 'workspace A'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+ctrl-shift-0 = 'move-node-to-workspace 0'
 ctrl-shift-1 = 'move-node-to-workspace 1'
 ctrl-shift-2 = 'move-node-to-workspace 2'
 ctrl-shift-3 = 'move-node-to-workspace 3'
@@ -261,6 +263,7 @@ ctrl-shift-p = 'move-node-to-workspace P'
 ctrl-shift-a = 'move-node-to-workspace A'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+ctrl-alt-shift-0 = 'move-node-to-workspace 0 --focus-follows-window'
 ctrl-alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 ctrl-alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
 ctrl-alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
@@ -352,6 +355,15 @@ run = ['move-node-to-workspace 4']
 if.app-id = 'com.openai.chat'      # ChatGPT
 run = ['move-node-to-workspace 5']
 
+# Gaming / Retro Gaming = 0
+[[on-window-detected]]
+if.app-name-regex-substring = 'ES-DE'
+run = ['move-node-to-workspace 0']
+
+[[on-window-detected]]
+if.app-id = 'com.libretro.dist.RetroArch'
+run = ['move-node-to-workspace 0']
+
 # Secondary screen
 
 # Notes = 8
@@ -399,6 +411,7 @@ run = ['layout floating']
 
 # Assign workspaces to monitors
 [workspace-to-monitor-force-assignment]
+0 = ['1']
 1 = ['1']
 2 = ['1']
 3 = ['1']
