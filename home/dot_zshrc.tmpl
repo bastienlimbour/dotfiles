@@ -56,7 +56,7 @@ export LANG="en_US.UTF-8"
 if [[ -n "$SSH_CONNECTION" ]]; then
   export EDITOR="nano"
 else
-  export EDITOR="cursor"
+  export EDITOR="cursor --wait"
 fi
 
 # -------- Shell (Zsh) configuration --------
