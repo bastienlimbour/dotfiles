@@ -66,7 +66,6 @@
   "security.promptForLocalFileProtocolHandling": false,
   "security.workspace.trust.untrustedFiles": "open",
   "scm.diffDecorations": "none",
-
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -77,6 +76,9 @@
     "**/__pycache__": true
   },
   "telemetry.telemetryLevel": "off",
+
+  // Security
+  "task.allowAutomaticTasks": "off",
 
   // Terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
@@ -95,7 +97,7 @@
   // "editor.inlineSuggest.suppressSuggestions": true,
 
   // AI / Completions
-  "cursor.enable_agent_window_setting": false,
+  // "cursor.enable_agent_window_setting": false,
   "cursor.cpp.enablePartialAccepts": true,
   "cursor.cpp.disabledLanguages": [],
   "cursor.composer.collapsePaneInputBoxPills": true,
@@ -246,6 +248,9 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
   }
 
   // --- Unsorted ---

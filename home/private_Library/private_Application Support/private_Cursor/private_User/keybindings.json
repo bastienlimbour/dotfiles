@@ -25,13 +25,13 @@
       "kind": "source.rename",
       "apply": "first"
     }
-  },
-  {
-    "key": "cmd+i",
-    "command": "composerMode.agent"
-  },
-  {
-    "key": "cmd+l",
-    "command": "composerMode.chat"
   }
+  // {
+  //   "key": "cmd+i",
+  //   "command": "composerMode.agent"
+  // },
+  // {
+  //   "key": "cmd+l",
+  //   "command": "composerMode.chat"
+  // }
 ]
