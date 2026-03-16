@@ -4,6 +4,7 @@
 "python" = "3.13"
 "sqlite" = "3"
 "npm:vercel" = "latest"
+"npm:tokscale" = "latest"
 
 [hooks]
 postinstall = "corepack enable"
