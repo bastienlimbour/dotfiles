@@ -2,7 +2,7 @@
 command = "bash"
 args = [
   "-c",
-  'cp {{ `"{{ .Target }}"` }} {{ `"{{ .Target }}"` }}.base && code --wait --new-window --merge {{ `"{{ .Destination }}"` }} {{ `"{{ .Target }}"` }} {{ `"{{ .Target }}"` }}.base {{ `"{{ .Source }}"` }}',
+  'cp {{ `"{{ .Target }}"` }} {{ `"{{ .Target }}"` }}.base && cursor --wait --new-window --merge {{ `"{{ .Destination }}"` }} {{ `"{{ .Target }}"` }} {{ `"{{ .Target }}"` }}.base {{ `"{{ .Source }}"` }}',
 ]
 
 {{ "" }}
@@ -24,7 +24,7 @@ args = [
 {{- end -}}
 
 {{/* detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */}}
-{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vagrant" "vscode") -}}
+{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vagrant" "vscode" "cursor") -}}
 {{-   $is_ephemeral_device = true -}}
 {{-   $is_headless_device = true -}}
 {{- end -}}
