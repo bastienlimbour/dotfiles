@@ -1,8 +1,8 @@
 {
-  "workbench.colorTheme": "One Dark Pro",
-  // "workbench.preferredLightColorTheme": "Cursor Light",
-  // "workbench.preferredDarkColorTheme": "Cursor Dark",
-  // "window.autoDetectColorScheme": true,
+  // "workbench.colorTheme": "GitHub Light",
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  "window.autoDetectColorScheme": true,
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "react",
   "material-icon-theme.saturation": 0.75,
@@ -251,7 +251,8 @@
   },
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
-  }
+  },
+  "projectManager.sortList": "Saved"
 
   // --- Unsorted ---
 }
