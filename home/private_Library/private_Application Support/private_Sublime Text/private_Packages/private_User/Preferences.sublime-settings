@@ -15,7 +15,7 @@
   "ignored_packages":
   [
     "TypeScript",
-    "Vintage"
+    "Vintage",
   ],
   "line_padding_bottom": 1,
   "line_padding_top": 1,
@@ -34,5 +34,10 @@
   "tab_size": 2,
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
-  "theme": "Default Dark.sublime-theme",
+  "theme": "auto",
+  "color_scheme": "auto",
+  "dark_theme": "GitHub Dimmed.sublime-theme",
+  "light_theme": "GitHub Light.sublime-theme",
+  "dark_color_scheme": "GitHub Dimmed.sublime-color-scheme",
+  "light_color_scheme": "GitHub Light.sublime-color-scheme",
 }
