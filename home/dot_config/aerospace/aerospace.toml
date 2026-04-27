@@ -303,15 +303,30 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 # Floating windows
 
 [[on-window-detected]]
-if.app-id = 'com.brave.Browser'               # Browser extension
-if.window-title-regex-substring = 'Bitwarden' # Bitwarden
+if.app-id = 'com.brave.Browser'               # Brave Browser
+if.window-title-regex-substring = 'Bitwarden' # Bitwarden extension
 run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'net.imput.helium'          # Helium Browser
+if.window-title-regex-substring = 'Bitwarden' # Bitwarden extension
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'net.imput.helium'          # Helium Browser
+if.window-title-regex-substring = "Who's using Helium?" # Helium profile selection modal
+run = ['layout floating', 'move-node-to-workspace 1']
 
 # Primary screen
 
 # Web Browser = 1
 [[on-window-detected]]
 if.app-id = 'com.brave.Browser'          # Brave Browser
+if.window-title-regex-substring = '^.+$' # Non empty title (not extension)
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-id = 'net.imput.helium'          # Helium Browser
 if.window-title-regex-substring = '^.+$' # Non empty title (not extension)
 run = ['move-node-to-workspace 1']
 
