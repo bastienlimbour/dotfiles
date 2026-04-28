@@ -1,37 +1,12 @@
 [
   {
-    "key": "alt+shift+i",
-    "command": "editor.action.sourceAction",
-    "when": "editorTextFocus",
-    "args": {
-      "kind": "source.addMissingImports",
-      "apply": "first"
-    }
+    "key": "cmd+l",
+    "command": "workbench.action.toggleAgentsFromKeyboard",
+    "when": "!isAuxiliaryWindowFocusedContext && !isGlass",
   },
   {
-    "key": "alt+shift+o",
-    "command": "editor.action.sourceAction",
-    "when": "editorTextFocus",
-    "args": {
-      "kind": "source.organizeImports",
-      "apply": "first"
-    }
+    "key": "alt+cmd+j",
+    "command": "-workbench.action.toggleAgentsFromKeyboard",
+    "when": "!isAuxiliaryWindowFocusedContext && !isGlass",
   },
-  {
-    "key": "alt+shift+r",
-    "command": "editor.action.sourceAction",
-    "when": "editorTextFocus",
-    "args": {
-      "kind": "source.rename",
-      "apply": "first"
-    }
-  }
-  // {
-  //   "key": "cmd+i",
-  //   "command": "composerMode.agent"
-  // },
-  // {
-  //   "key": "cmd+l",
-  //   "command": "composerMode.chat"
-  // }
 ]
