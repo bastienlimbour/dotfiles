@@ -381,6 +381,11 @@ run = ['move-node-to-workspace 0']
 
 # Secondary screen
 
+# Secondary text editor = 7
+[[on-window-detected]]
+if.app-id = 'com.sublimetext.4' # Sublime Text
+run = ['move-node-to-workspace 7']
+
 # Notes = 8
 [[on-window-detected]]
 if.app-id = 'notion.id'            # Notion
