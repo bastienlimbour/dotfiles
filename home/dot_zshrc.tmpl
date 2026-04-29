@@ -60,6 +60,10 @@ else
   export EDITOR="cursor --wait"
 fi
 
+opencode() {
+  EDITOR="subl --new-window --wait" command opencode "$@"
+}
+
 # -------- Shell (Zsh) configuration --------
 
 # Create directories if they don't exist
