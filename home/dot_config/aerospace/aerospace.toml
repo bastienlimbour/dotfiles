@@ -339,35 +339,35 @@ run = ['move-node-to-workspace 2']
 if.app-id = 'com.microsoft.VSCode' # VSCode
 run = ['move-node-to-workspace 2']
 
-# Terminal = 3
+# AI Agent = 3
 [[on-window-detected]]
-if.app-id = 'com.googlecode.iterm2' # iTerm
+if.app-id = 'ai.opencode.desktop' # OpenCode
 run = ['move-node-to-workspace 3']
 
-# Dev Tools = 4
+# Terminal = 4
+[[on-window-detected]]
+if.app-id = 'com.googlecode.iterm2' # iTerm
+run = ['move-node-to-workspace 4']
+
+# Dev Tools = 5
 [[on-window-detected]]
 if.app-id = 'com.usebruno.app'     # Bruno
-run = ['move-node-to-workspace 4']
+run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyapp.TablePlus' # TablePlus
-run = ['move-node-to-workspace 4']
+run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-id = 'dev.kdrag0n.MacVirt'  # OrbStack
-run = ['move-node-to-workspace 4']
+run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'    # Figma
-run = ['move-node-to-workspace 4']
+run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-id = 'com.canva.CanvaDesktop' # Canva
-run = ['move-node-to-workspace 4']
-
-# Misc = 5
-[[on-window-detected]]
-if.app-id = 'com.openai.chat'      # ChatGPT
 run = ['move-node-to-workspace 5']
 
 # Gaming / Retro Gaming = 0
