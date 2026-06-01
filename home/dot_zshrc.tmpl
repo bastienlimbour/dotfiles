@@ -29,9 +29,9 @@ export DOTAGENTS="$HOME/.agents"
 # -------- Tools configurations & Paths --------
 
 # Android SDK
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$ANDROID_HOME/platform-tools:$PATH"
-export PATH="$ANDROID_HOME/emulator:$PATH"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Homebrew
 export HOMEBREW_NO_ANALYTICS=1
