@@ -1,5 +1,5 @@
 [tools]
-"java" = "zulu-21"
+"java" = "zulu-17"
 "node" = "22"
 "python" = "3.13"
 "sqlite" = "3"
