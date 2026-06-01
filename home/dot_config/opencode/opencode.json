@@ -2,11 +2,18 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": "notify",
   "share": "manual",
+  "shell": "zsh",
   "default_agent": "plan",
+  "experimental": {
+    "continue_loop_on_deny": true
+  },
+  "compaction": {
+    "auto": false,
+    "prune": true,
+    "reserved": 20000
+  },
   "instructions": ["~/.agents/rules/AGENTS.md"],
-  "plugin": [
-    // "@mohak34/opencode-notifier@beta"
-  ],
+  "plugin": [],
   "tools": {
     "question": false
   },
@@ -16,10 +23,14 @@
   },
   "agent": {
     "plan": {
-      "color": "warning"
+      "color": "warning",
+      "options": {},
+      "permission": {}
     },
     "build": {
-      "color": "primary"
+      "color": "primary",
+      "options": {},
+      "permission": {}
     }
   }
 }
