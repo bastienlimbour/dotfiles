@@ -7,8 +7,8 @@
     ".git",
     "node_modules"
   ],
-  "font_size": 14,
-  "font_face": "Menlo",
+  "font_size": 13,
+  "font_face": "CommitMono Nerd Font",
   "gutter": true,
   "highlight_line": true,
   "highlight_modified_tabs": true,
@@ -16,8 +16,8 @@
   [
     "Vintage",
   ],
-  "line_padding_bottom": 1,
-  "line_padding_top": 1,
+  "line_padding_bottom": 2,
+  "line_padding_top": 2,
   "predawn_findreplace_small": true,
   "predawn_sidebar_arrows": true,
   "predawn_sidebar_narrow": true,
@@ -39,4 +39,5 @@
   "light_theme": "GitHub Light.sublime-theme",
   "dark_color_scheme": "GitHub Dimmed.sublime-color-scheme",
   "light_color_scheme": "GitHub Light.sublime-color-scheme",
+  "index_files": true,
 }

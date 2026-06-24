@@ -1,26 +1,28 @@
 {
-  // "workbench.colorTheme": "GitHub Light",
-  "workbench.preferredLightColorTheme": "GitHub Light",
-  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  // Theme
   "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.iconTheme": "material-icon-theme",
-  "material-icon-theme.activeIconPack": "react",
-  "material-icon-theme.saturation": 0.75,
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.activeIconPack": "none",
+  "material-icon-theme.saturation": 0.9,
 
   // Typography
   "editor.fontFamily": "CommitMono Nerd Font, Menlo, Monaco, Courier New, monospace",
   "editor.fontSize": 13,
-  "editor.fontWeight": 400,
   "editor.letterSpacing": 0,
-  "editor.lineHeight": 1.7,
+  "editor.lineHeight": 1.5,
   "terminal.integrated.fontFamily": "CommitMono Nerd Font, Menlo, Monaco, Courier New, monospace",
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.lineHeight": 1.3,
 
   // UI / UX
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.icons": false,
+  "breadcrumbs.symbolPath": "off",
   "editor.cursorBlinking": "phase",
-  "editor.folding": false,
+  "editor.folding": true,
   "editor.hideCursorInOverviewRuler": true,
   "editor.minimap.enabled": false,
   "editor.selectionHighlight": false,
@@ -28,26 +30,30 @@
   "editor.roundedSelection": true,
   "editor.scrollBeyondLastLine": true,
   "editor.guides.indentation": true,
-  "editor.colorDecorators": false,
+  "editor.colorDecorators": true,
   "editor.bracketPairColorization.enabled": false,
   "editor.hover.delay": 400,
   "editor.wordWrapColumn": 120,
-  "editor.padding.top": 8,
+  // "editor.padding.top": 8,
   "editor.lightbulb.enabled": "off",
   "editor.overviewRulerBorder": true,
-  "editor.renderLineHighlight": "line",
+  "editor.renderLineHighlight": "all",
   "editor.renderControlCharacters": true,
   "editor.accessibilitySupport": "off",
-  "editor.unicodeHighlight.allowedLocales": {
-    "en": true,
-    "fr": true
-  },
-  "workbench.tree.renderIndentGuides": "always",
+  // "editor.unicodeHighlight.allowedLocales": {
+  //   "en": true,
+  //   "fr": true,
+  // },
+  "workbench.tree.renderIndentGuides": "none",
   "workbench.editor.showIcons": true,
   "workbench.editor.labelFormat": "short",
+  // "workbench.editor.customLabels.enabled": true,
+  // "workbench.editor.customLabels.patterns": {
+  //   "**/*.*": "${dirname(0)} / ${filename}.${extname}",
+  // },
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.activityBar.location": "hidden",
-  "workbench.tree.indent": 14,
+  "workbench.tree.indent": 12,
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -56,16 +62,14 @@
   "explorer.compactFolders": false,
   "window.commandCenter": true,
   "window.zoomLevel": 0,
-  "typescript.suggest.autoImports": true,
-  "javascript.suggest.autoImports": true,
+  "diffEditor.renderSideBySide": true,
+  "scm.diffDecorations": "none",
+  "scm.inputFontFamily": "editor",
 
   // Behavior
   "editor.linkedEditing": true,
-  "editor.largeFileOptimizations": true,
   "extensions.ignoreRecommendations": true,
-  "security.promptForLocalFileProtocolHandling": false,
-  "security.workspace.trust.untrustedFiles": "open",
-  "scm.diffDecorations": "none",
+
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -73,12 +77,15 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "**/__pycache__": true
+    "**/__pycache__": true,
   },
+
   "telemetry.telemetryLevel": "off",
 
   // Security
   "task.allowAutomaticTasks": "off",
+  "security.promptForLocalFileProtocolHandling": false,
+  "security.workspace.trust.untrustedFiles": "open",
 
   // Terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
@@ -86,25 +93,11 @@
   "terminal.integrated.autoReplies": {},
   "terminal.integrated.enableAutoReplies": false,
 
-  // Suggestions
-  // "editor.quickSuggestions": {
-  //   "strings": "on",
-  //   "other": "on",
-  //   "comments": "on"
-  // },
-  // "editor.suggestOnTriggerCharacters": true,
-  // "editor.inlineSuggest.enabled": false,
-  // "editor.inlineSuggest.suppressSuggestions": true,
-
-  // AI / Completions
-  // "cursor.enable_agent_window_setting": false,
-  "cursor.cpp.enablePartialAccepts": true,
+  // Cursor
   "cursor.cpp.disabledLanguages": [],
-  "cursor.composer.collapsePaneInputBoxPills": true,
-  "cursor.composer.shouldAllowCustomModes": true,
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.composer.editorConversationDensity": "compact-ungrouped",
   "cursor.composer.usageSummaryDisplay": "always",
-  "cursor.composer.backspaceRemoveContext": false,
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
   "cursor.general.globalCursorIgnoreList": [
     "**/.env",
     "**/.env.*",
@@ -122,7 +115,7 @@
     "**/id_dsa",
     "**/.ssh/id_*",
     "**/*.env.*",
-    "**/.sentryclirc"
+    "**/.sentryclirc",
   ],
 
   // Git / Gitlens
@@ -133,7 +126,7 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.views.scm.grouped.views": {
     "commits": false,
-    "stashes": false
+    "stashes": false,
   },
   "gitlens.graph.layout": "editor",
   "gitlens.rebaseEditor.ordering": "asc",
@@ -142,7 +135,8 @@
   // Performances
   "redhat.telemetry.enabled": false,
   "gitlens.telemetry.enabled": false,
-  // "editor.largeFileOptimizations": false,
+  "telemetry.feedback.enabled": false,
+  "editor.largeFileOptimizations": true,
 
   // Type checking
   // "js/ts.implicitProjectConfig.checkJs": true,
@@ -159,31 +153,48 @@
   "editor.tabSize": 2,
 
   // Formatting (built-in)
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": false,
+  "editor.formatOnPaste": true,
   "editor.detectIndentation": true,
   "files.trimFinalNewlines": true,
 
   // Formatting (extensions)
-  "prettier.requireConfig": false,
+  "prettier.enable": false,
+  "prettier.requireConfig": true,
+  "oxc.enable.oxfmt": true,
+
+  // Linting (extensions)
+  "oxc.enable.oxlint": true,
+  "oxc.trace.server": "verbose",
 
   // Files associations
   "emmet.includeLanguages": {
     "smarty": "html",
-    "twig": "html"
+    "twig": "html",
   },
   "files.associations": {
+    // "*.css": "tailwindcss",
     // "*.html": "smarty",
     // "*.tpl": "smarty",
     // "*.scss": "postcss",
   },
   "workbench.editorAssociations": {
     "*.svg": "default",
-    "git-rebase-todo": "default"
+    "git-rebase-todo": "default",
+  },
+
+  // Suggestions
+  "editor.quickSuggestions": {
+    "strings": "on",
+    "comments": "off",
+    "other": "on",
   },
 
   // ----- Extensions -----
+
+  // Project manager
+  "projectManager.sortList": "Saved",
 
   // Tailwind CSS Intellisence
   "tailwindCSS.emmetCompletions": true,
@@ -193,19 +204,31 @@
   "sqltools.useNodeRuntime": true,
   "sqltools.format": {
     "language": "sql",
-    "linesBetweenQueries": 2
+    "linesBetweenQueries": 2,
   },
+
+  // Markdown Lint
+  "markdownlint.severityForError": "Information",
+  "markdownlint.severityForWarning": "Warning",
+  "markdownlint.config": {
+    "first-line-h1": false,
+  },
+
+  // Mermaid
+  "mermaidChart.showGenerateDiagramCodeLens": false,
 
   // ----- Language specific -----
 
   // Javascript
-  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.suggest.autoImports": true,
+  "javascript.preferences.importModuleSpecifier": "shortest",
   "javascript.preferences.importModuleSpecifierEnding": "minimal",
 
   // TypeScript
-  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.suggest.autoImports": true,
+  "typescript.preferences.importModuleSpecifier": "shortest",
   "typescript.preferences.importModuleSpecifierEnding": "minimal",
-  // "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.autoImportFileExcludePatterns": ["@radix-ui/*"],
 
@@ -223,36 +246,43 @@
   // ----- Languages override -----
 
   "[c]": {
-    "editor.defaultFormatter": "anysphere.cpptools"
+    "editor.defaultFormatter": "anysphere.cpptools",
   },
   "[cpp]": {
-    "editor.defaultFormatter": "anysphere.cpptools"
+    "editor.defaultFormatter": "anysphere.cpptools",
   },
-  "[dockercompose]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+  // "[dockercompose]": {
+  //   "editor.defaultFormatter": "redhat.vscode-yaml",
+  // },
+  // "[github-actions-workflow]": {
+  //   "editor.defaultFormatter": "redhat.vscode-yaml",
+  // },
+  // "[markdown]": {
+  //   "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+  // },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
   },
-  "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+  "[sql]": {
+    "editor.defaultFormatter": "mtxr.sqltools",
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
+  // "[yaml]": {
+  //   "editor.defaultFormatter": "redhat.vscode-yaml",
+  // },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
   },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff"
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "[sql]": {
-    "editor.defaultFormatter": "mtxr.sqltools"
-  },
-  "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
-  },
-  "projectManager.sortList": "Saved"
+  "git.openRepositoryInParentFolders": "never",
+  "editor.renderWhitespace": "none",
 
   // --- Unsorted ---
 }
