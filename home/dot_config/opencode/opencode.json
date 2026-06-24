@@ -12,25 +12,36 @@
     "prune": true,
     "reserved": 20000
   },
-  "instructions": ["~/.agents/rules/AGENTS.md"],
+  "instructions": [
+    "~/.agents/rules/AGENTS.md"
+  ],
   "plugin": [],
   "tools": {
     "question": false
   },
   "permission": {
     "question": "deny",
-    "skill": "ask"
+    "skill": {
+      "*": "ask",
+      // "internal-*": "deny",
+    }
   },
   "agent": {
     "plan": {
       "color": "warning",
-      "options": {},
-      "permission": {}
     },
     "build": {
       "color": "primary",
-      "options": {},
-      "permission": {}
-    }
+    },
+    "ask": {
+      "mode": "primary",
+      "color": "info",
+      "description": "Conversational read-only agent. Answers questions and provides output without planning or writing files.",
+      // "prompt": "You are a conversational assistant. Answer questions directly and concisely. Do not plan tasks, do not suggest file edits, do not structure your response as a plan or step-by-step action list unless explicitly asked. Focus on giving useful, accurate answers in a natural conversation style.",
+      "permission": {
+        "edit": "deny",
+        "bash": "deny"
+      }
+    },
   }
 }
