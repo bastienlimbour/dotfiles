@@ -339,14 +339,14 @@ run = ['move-node-to-workspace 2']
 if.app-id = 'com.microsoft.VSCode' # VSCode
 run = ['move-node-to-workspace 2']
 
-# AI Agent = 3
-[[on-window-detected]]
-if.app-id = 'ai.opencode.desktop' # OpenCode
-run = ['move-node-to-workspace 3']
-
-# Terminal = 4
+# Terminal = 3
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2' # iTerm
+run = ['move-node-to-workspace 3']
+
+# AI Agent = 4
+[[on-window-detected]]
+if.app-id = 'ai.opencode.desktop' # OpenCode
 run = ['move-node-to-workspace 4']
 
 # Dev Tools = 5
