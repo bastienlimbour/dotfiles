@@ -90,33 +90,13 @@
   // Terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.shellIntegration.enabled": false,
-  "terminal.integrated.autoReplies": {},
-  "terminal.integrated.enableAutoReplies": false,
 
   // Cursor
   "cursor.cpp.disabledLanguages": [],
   "cursor.composer.editorConversationDensity": "compact-ungrouped",
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.composer.shouldChimeAfterChatFinishes": true,
-  "cursor.general.globalCursorIgnoreList": [
-    "**/.env",
-    "**/.env.*",
-    "**/credentials.json",
-    "**/credentials.*.json",
-    "**/secret.json",
-    "**/secrets.json",
-    "**/*.key",
-    "**/*.pem",
-    "**/*.pfx",
-    "**/*.p12",
-    "**/*.crt",
-    "**/*.cer",
-    "**/id_rsa",
-    "**/id_dsa",
-    "**/.ssh/id_*",
-    "**/*.env.*",
-    "**/.sentryclirc",
-  ],
+
 
   // Git / Gitlens
   "git.autofetch": true,
@@ -212,6 +192,7 @@
   "markdownlint.severityForWarning": "Warning",
   "markdownlint.config": {
     "first-line-h1": false,
+    "fenced-code-language": false
   },
 
   // Mermaid
